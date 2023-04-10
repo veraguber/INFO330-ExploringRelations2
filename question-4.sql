@@ -1,1 +1,2 @@
 -- Which sales agent made the most in sales in 2010?
+ SELECT e.FirstName || ' ' || e.LastName as 'Sales Agent Name', SUM(i.Total) as "Sales Total" FROM employees e, invoices i, customers c WHERE i.CustomerId == c.CustomerId AND c.SupportRepId == e.EmployeeId AND i.InvoiceDate LIKE '2010%' GROUP BY e.FirstName || ' ' || e.LastName ORDER BY SUM(i.Total) DESC limit 1;
