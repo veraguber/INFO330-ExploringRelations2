@@ -1,1 +1,2 @@
 -- Show the sales agent's full name and invoices associated with each sales agent.
+SELECT e.FirstName, e.LastName, i.* FROM employees e, customers c, invoices i WHERE i.CustomerId == c.CustomerId AND e.EmployeeId == c.SupportRepId;
